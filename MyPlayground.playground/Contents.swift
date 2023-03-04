@@ -39,7 +39,7 @@ import UIKit
 
 //Part 4 - Functions
 
-//// func "Name of the function" ( Name parameters : Data Type ) "obs: this next part is optional, is a pre declaration of the data type return of that function" -> Int {}
+//// func "Name of the function" ("You can use a label here, its only for more readble" Name parameters : Data Type ) "obs: this next part is optional, is a pre declaration of the data type return of that function" -> Int {}
 //func SomaNumero(Value1: Float , Value2 : Float ) -> Float{
 //    var soma = Value1 + Value2
 //    return soma
@@ -49,8 +49,67 @@ import UIKit
 
 //Part 5 - for loop
 
-let AllStars = ["Sergio", "Harden", "James","Test"]
+//let AllStars = ["Sergio", "Harden", "James","Test"]
+//
+//for Players in AllStars{
+//    print(Players)
+//}
+//var RandomInt : [Int] = []
+//for _ in 0..<24 { //When you dont use the variavle for the loop, use the "_"
+//    var randomNumbers = Int.random(in: 0...100)
+//    RandomInt.append(randomNumbers)
+//}
+//print(RandomInt)
 
-for Players in AllStars{
-    print(Playersl)
+//Part 6 - Enum - It`s like a list for you using in the code, ex:
+
+enum Cars {
+    case Toyota
+    case Mitsubishi
+    case Volkswagem
+    case Fiat
+}
+
+func OpnionAboutCars(about cars: Cars){
+    if cars == .Fiat{
+        print("Its a good car")
+    }
+}
+
+OpnionAboutCars(about: .Fiat)
+
+// the second option, is declaret a value for the cases in enum
+
+enum devices: String {
+    case IPhone = " Its so expensive"
+    case Android = "So great"
+}
+
+func OpinionAboutPhone(About device: devices){
+    print(device.rawValue)
+}
+
+OpinionAboutPhone(About: .Android)
+
+
+//Part 7 - Optionals
+
+// let if
+
+var ages :[Int] = [55,15,12,29,89,71,19]
+ages.sort()
+if let OldestAge = ages.last{
+    print("The oldest age is \(OldestAge)")
+} else {
+    print("There is not the oldest Age")
+}
+
+// guard statement
+
+func getoldestAge(){
+    guard let OldestAge2 = ages.last else {
+        return
+    }
+    print("the oldest age is \(OldestAge2)")
+    
 }
