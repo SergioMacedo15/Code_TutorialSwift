@@ -62,54 +62,108 @@ import UIKit
 //print(RandomInt)
 
 //Part 6 - Enum - It`s like a list for you using in the code, ex:
+//
+//enum Cars {
+//    case Toyota
+//    case Mitsubishi
+//    case Volkswagem
+//    case Fiat
+//}
+//
+//func OpnionAboutCars(about cars: Cars){
+//    if cars == .Fiat{
+//        print("Its a good car")
+//    }
+//}
+//
+//OpnionAboutCars(about: .Fiat)
+//
+//// the second option, is declaret a value for the cases in enum
+//
+//enum devices: String {
+//    case IPhone = " Its so expensive"
+//    case Android = "So great"
+//}
+//
+//func OpinionAboutPhone(About device: devices){
+//    print(device.rawValue)
+//}
+//
+//OpinionAboutPhone(About: .Android)
+//
+//
+////Part 7 - Optionals
+//
+//// let if
+//
+//var ages :[Int] = [55,15,12,29,89,71,19]
+//ages.sort()
+//if let OldestAge = ages.last{
+//    print("The oldest age is \(OldestAge)")
+//} else {
+//    print("There is not the oldest Age")
+//}
+//
+//// guard statement
+//
+//func getoldestAge(){
+//    guard let OldestAge2 = ages.last else {
+//        return
+//    }
+//    print("the oldest age is \(OldestAge2)")
+//}
+//
+//getoldestAge()
+//
+//// nil coalescing
+//let oldestAge3 = ages.last ?? 89 // if the last value in ages is a nil, the command declared the default value 89,
+//
 
-enum Cars {
-    case Toyota
-    case Mitsubishi
-    case Volkswagem
-    case Fiat
-}
-
-func OpnionAboutCars(about cars: Cars){
-    if cars == .Fiat{
-        print("Its a good car")
-    }
-}
-
-OpnionAboutCars(about: .Fiat)
-
-// the second option, is declaret a value for the cases in enum
-
-enum devices: String {
-    case IPhone = " Its so expensive"
-    case Android = "So great"
-}
-
-func OpinionAboutPhone(About device: devices){
-    print(device.rawValue)
-}
-
-OpinionAboutPhone(About: .Android)
+//Part 8 - Class
 
 
-//Part 7 - Optionals
-
-// let if
-
-var ages :[Int] = [55,15,12,29,89,71,19]
-ages.sort()
-if let OldestAge = ages.last{
-    print("The oldest age is \(OldestAge)")
-} else {
-    print("There is not the oldest Age")
-}
-
-// guard statement
-
-func getoldestAge(){
-    guard let OldestAge2 = ages.last else {
-        return
-    }
-    print("the oldest age is \(OldestAge2)")
+class Developer {
+    var name : String?
+    var jobTitle : String?
+    var yearsExp : Int?
     
+    init(){ }
+    
+    init(name: String, jobTitle: String, yearsExp: Int){
+        self.name = name
+        self.jobTitle = jobTitle
+        self.yearsExp = yearsExp
+        
+    }
 }
+//
+//let Sean = Developer(name: "Sean", jobTitle: "Software Engineer", yearsExp: 12)
+//
+//Sean.yearsExp
+//Sean.jobTitle
+//Sean.name
+
+
+//Sub-Part 8.1 SubClass
+//// the class IOSDeveloper is a subClass of the parent Class Developer and contain the same functions and variables
+//class IOSDeveloper : Developer {
+//    var favoriteFrameWork : String?
+//
+//    func ShowtheFavoriteFrameWork(){
+//        if let favoriteFrameWork = favoriteFrameWork {
+//            print(favoriteFrameWork)
+//        } else {
+//            print("I dont have a favorite FrameWork")
+//        }
+//    }
+//}
+//
+//var Sean = IOSDeveloper(name: "Sergio ", jobTitle: "IOS Developer", yearsExp: 5)
+//Sean.ShowtheFavoriteFrameWork()
+//Sean.favoriteFrameWork = "UIkit"
+//Sean.ShowtheFavoriteFrameWork()y
+
+
+// Part 9 - Struct
+
+// it`s a like class, but the main difference is the reference, the copy of the class type only create a reference for the self class, if you make a change in your copy, you make the change in the orginal class too.
